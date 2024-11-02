@@ -19,24 +19,14 @@ class DataProcessor:
         # to get better visibility during your training.
 
         assert type(dataset) == datasets.dataset_dict.DatasetDict
+        def create_qa_text(row):
+        
+            chosen_solution = row['sol1'] if row['label'] == 0 else row['sol2']
+            return f"{chosen_solution}"
 
-        def format_qa_column(dataset):
-            def create_qa_text(row):
-                chosen_solution = row['sol1'] if row['label'] == 0 else row['sol2']
-                return f"Question: {row['goal']}\nAnswer: {chosen_solution}"
-            dataset = dataset.map(lambda row: {"labels": create_qa_text(row)})
-            return dataset
-
-        def preprocess_function(example):
-            inputs = self.tokenizer(example["labels"], padding="max_length", truncation=True, return_tensors="pt")
-            inputs["labels"] = inputs["input_ids"].clone()
-            inputs["labels"][inputs["labels"] == self.tokenizer.pad_token_id] = -100
-            return inputs
-
-        processed_dataset = format_qa_column(dataset)
-        processed_dataset = processed_dataset.map(preprocess_function, batched=True)
-        processed_dataset = processed_dataset.remove_columns(["goal", "sol1", "sol2", "label"])
-
+        processed_dataset = dataset.map(lambda row: {"labels": create_qa_text(row)})
+        processed_dataset = processed_dataset.remove_columns(['sol1', 'sol2', 'label'])
+        return processed_dataset
 
     def _tokenize_for_reward_training(self, examples):
         # TODO: The RewardTrainer expects the data 

@@ -1,36 +1,40 @@
-from model.model_connection import Model
-from training.train_supervised import SupervisedTrainer
 from data.data_connection import DataConnector
 from data.data_processing import DataProcessor
+from model.model_connection import Model
+from training.train_supervised import SupervisedTrainer
 from get_logging import logger_object
-logger = logger_object()
 import wandb
+logger = logger_object()
+
+
 def run(training_type):
-    
 
-    # TODO: implement this function.
-    model_class = Model()
+    # get model artifacts
+    logger.debug('loading model tokenizer artifacts')
     model_id = 'openai-community/gpt2'
-    model, tokenizer = model_class.get_model_for_LM(model_id=model_id)
-    logger.debug(f'loaded model and tokenizer for model_id : {model_id}')
-    supervise_trainer = SupervisedTrainer(model, tokenizer)
-    logger.debug(f'initialized SupervisedTrainer')
-
-    dataset_id = 'ybisk/piqa'
-    dataset_connector = DataConnector()
-    dataset = dataset_connector.get_data(path = dataset_id)
-    logger.debug(f'loaded dataset')
-
-    dataset_processor = DataProcessor(tokenizer=tokenizer)
-    logger.debug(f'initialized DataProcessor')
-    processed_data = dataset_processor.prepare_for_supervised_training(dataset=dataset)
-    logger.debug(f'proeprocessed dataset')
-
+    model_artifacts_object = Model()
+    model, tokenizer = model_artifacts_object.get_model_for_LM(model_id)
+    
+    # initialize trainer
+    logger.debug('initializing SupervisedTrainer')
+    model_trainer = SupervisedTrainer(model, tokenizer)
+    
+    # get raw dataset
+    logger.debug('loading raw dataset')
+    path = 'ybisk/piqa'
+    data_object = DataConnector()
+    dataset = data_object.get_data(path)
+    
+    # get processed dataset
+    logger.debug('processing raw dataset')
+    processed_data_object = DataProcessor(tokenizer)
+    processed_dataset = processed_data_object.prepare_for_supervised_training(dataset)
+    
+    # start supervised training
     if training_type == 'supervised':
-        logger.debug(f'training started')
-        supervise_trainer.train(processed_data)
-        logger.debug(f'training completed')
-
+        logger.debug('starting training...')
+        model_trainer.train(processed_dataset)
+        
     elif training_type == 'reward':
         raise NotImplementedError
 
@@ -46,6 +50,9 @@ def run(training_type):
     else: 
         raise NotImplemented
         
+    trainer.train(processed_data)
+
+
 if __name__ == '__main__':
     wandb.init(project="huggingface", name="gpt-model-training-run")
     run('supervised')

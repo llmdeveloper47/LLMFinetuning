@@ -1,0 +1,52 @@
+2024-10-25 20:53:48 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-10-25 20:53:48 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /openai-community/gpt2/resolve/main/config.json HTTP/11" 200 0
+2024-10-25 20:53:48 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /openai-community/gpt2/resolve/main/generation_config.json HTTP/11" 200 0
+2024-10-25 20:53:48 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /openai-community/gpt2/resolve/main/pytorch_model.bin HTTP/11" 302 0
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /openai-community/gpt2/resolve/main/tokenizer_config.json HTTP/11" 200 0
+2024-10-25 20:53:49 - GPTDatasetBuilding - DEBUG - loaded model and tokenizer for model_id : openai-community/gpt2
+2024-10-25 20:53:49 - GPTDatasetBuilding - DEBUG - initialized SupervisedTrainer
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/datasets/ybisk/piqa HTTP/11" 200 3250
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/datasets/ybisk/piqa HTTP/11" 200 3250
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/datasets/ybisk/piqa/tree/main?recursive=False&expand=False HTTP/11" 200 292
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /datasets/ybisk/piqa/resolve/main/piqa.py HTTP/11" 200 5358
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): s3.amazonaws.com:443
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/ybisk/piqa/ybisk/piqa.py HTTP/11" 404 0
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): datasets-server.huggingface.co:443
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://datasets-server.huggingface.co:443 "GET /parquet?dataset=ybisk/piqa HTTP/11" 501 None
+2024-10-25 20:53:49 - urllib3.connectionpool - DEBUG - https://s3.amazonaws.com:443 "HEAD /datasets.huggingface.co/datasets/datasets/ybisk/piqa/ybisk/piqa.py HTTP/11" 404 0
+2024-10-25 20:53:50 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/datasets/ybisk/piqa/revision/main HTTP/11" 200 3250
+2024-10-25 20:53:50 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /datasets/ybisk/piqa/resolve/main/piqa.py HTTP/11" 200 0
+2024-10-25 20:53:50 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /datasets/ybisk/piqa/resolve/main/dataset_infos.json HTTP/11" 404 0
+2024-10-25 20:53:50 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /datasets/ybisk/piqa/resolve/main/README.md HTTP/11" 200 0
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to acquire lock 4805542096 on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4805542096 acquired on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to release lock 4805542096 on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4805542096 released on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to acquire lock 4315304592 on /Users/mle/.cache/huggingface/datasets/_Users_mle_.cache_huggingface_datasets_ybisk___piqa_plain_text_1.1.0_6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4315304592 acquired on /Users/mle/.cache/huggingface/datasets/_Users_mle_.cache_huggingface_datasets_ybisk___piqa_plain_text_1.1.0_6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011.lock
+2024-10-25 20:53:50 - fsspec.local - DEBUG - open file: /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011/dataset_info.json
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to release lock 4315304592 on /Users/mle/.cache/huggingface/datasets/_Users_mle_.cache_huggingface_datasets_ybisk___piqa_plain_text_1.1.0_6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4315304592 released on /Users/mle/.cache/huggingface/datasets/_Users_mle_.cache_huggingface_datasets_ybisk___piqa_plain_text_1.1.0_6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to acquire lock 4830258192 on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4830258192 acquired on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to release lock 4830258192 on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4830258192 released on /Users/mle/.cache/huggingface/modules/datasets_modules/datasets/ybisk--piqa.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to acquire lock 4315310352 on /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011_builder.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4315310352 acquired on /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011_builder.lock
+2024-10-25 20:53:50 - fsspec.local - DEBUG - open file: /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011/dataset_info.json
+2024-10-25 20:53:50 - filelock - DEBUG - Attempting to release lock 4315310352 on /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011_builder.lock
+2024-10-25 20:53:50 - filelock - DEBUG - Lock 4315310352 released on /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011_builder.lock
+2024-10-25 20:53:50 - GPTDatasetBuilding - DEBUG - loaded dataset : ybisk/piqa
+2024-10-25 20:53:50 - GPTDatasetBuilding - DEBUG - loaded dataset
+2024-10-25 20:53:50 - GPTDatasetBuilding - DEBUG - initialized DataProcessor
+2024-10-25 20:53:50 - fsspec.local - DEBUG - open file: /Users/mle/.cache/huggingface/datasets/ybisk___piqa/plain_text/1.1.0/6c611c1a9bf220943c4174e117d3b660859665baf1d43156230116185312d011/tmp_vgbwlf9
+2024-10-25 20:53:51 - GPTDatasetBuilding - DEBUG - proeprocessed dataset
+2024-10-25 20:53:51 - GPTDatasetBuilding - DEBUG - training started
+ GPTDatasetBuilding - DEBUG - initialized DataProcessor
+2024-10-25 20:53:50,268 - GPTDatasetBuilding - DEBUG - initialized DataProcessor
+2024-10-25 20:53:51,054 - GPTDatasetBuilding - DEBUG - proeprocessed dataset
+2024-10-25 20:53:51,054 - GPTDatasetBuilding - DEBUG - proeprocessed dataset
+2024-10-25 20:53:51,054 - GPTDatasetBuilding - DEBUG - proeprocessed dataset
+2024-10-25 20:53:51,054 - GPTDatasetBuilding - DEBUG - training started
+2024-10-25 20:53:51,054 - GPTDatasetBuilding - DEBUG - training started
+2024-10-25 20:53:51,054 - GPTDatasetBuilding - DEBUG - training started
